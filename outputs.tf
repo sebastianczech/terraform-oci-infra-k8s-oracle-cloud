@@ -39,7 +39,7 @@ output "compute_instances_public_ip" {
 }
 
 output "compute_instances" {
-  value       = {
+  value = {
     name       = oci_core_instance.k8s_node.*.display_name
     public_ip  = oci_core_instance.k8s_node.*.public_ip
     private_ip = oci_core_instance.k8s_node.*.private_ip
@@ -55,4 +55,14 @@ output "lb_public_ip" {
 output "lb_id" {
   description = "ID of LB"
   value       = oci_network_load_balancer_network_load_balancer.k8s_network_load_balancer.id
+}
+
+output "oci_ubuntu_images" {
+  description = "list of possible Ubuntu images"
+  value = {
+    display_name             = data.oci_core_images.oci_ubuntu_images.images.*.display_name
+    operating_system         = data.oci_core_images.oci_ubuntu_images.images.*.operating_system
+    operating_system_version = data.oci_core_images.oci_ubuntu_images.images.*.operating_system_version
+    id                       = data.oci_core_images.oci_ubuntu_images.images.*.id
+  }
 }

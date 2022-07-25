@@ -26,11 +26,11 @@ variable "subnet_cidr_block" {
 }
 
 # https://docs.oracle.com/en-us/iaas/images/ubuntu-2004/
-variable "instance_image" {
-  description = "OCID of image for instance"
-  type        = string
-  default     = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaafofmp3otdb5fh3ged2zhsepoh3e2dkaus636uee4vpt7jrgqssma"
-}
+# variable "instance_image" {
+#   description = "OCID of image for instance"
+#   type        = string
+#   default     = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaafofmp3otdb5fh3ged2zhsepoh3e2dkaus636uee4vpt7jrgqssma"
+# }
 
 variable "instance_shape" {
   description = "shape of instance"
@@ -42,4 +42,14 @@ variable "instance_count" {
   description = "number of instances to create"
   type        = number
   default     = 4
+}
+
+variable "egress_security_rules" {
+  type    = list(map(string))
+  default = []
+}
+
+variable "ingress_security_rules" {
+  type    = list(map(string))
+  default = []
 }
