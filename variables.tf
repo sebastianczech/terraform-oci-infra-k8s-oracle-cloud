@@ -57,3 +57,8 @@ variable "ingress_security_rules" {
   type    = list(map(string))
   default = []
 }
+
+variable "create_ansible_inventory_vars" {
+  type    = bool
+  default = false
+}
