@@ -1,5 +1,5 @@
 resource "local_file" "ansible_vars" {
-  count   = var.create_ansible_inventory_vars ? 1 : 0
+  count = var.create_ansible_inventory_vars ? 1 : 0
   content = templatefile("${path.module}/vars.tmpl",
     {
       lb_public_ip = oci_network_load_balancer_network_load_balancer.k8s_network_load_balancer.ip_addresses[0].ip_address

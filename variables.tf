@@ -48,6 +48,12 @@ variable "instance_count" {
   default     = 4
 }
 
+variable "availability_domains" {
+  description = "Availability domains in which instances are going to be created"
+  type        = list(number)
+  default     = [0, 1, 2, 0]
+}
+
 variable "egress_security_rules" {
   type    = list(map(string))
   default = []

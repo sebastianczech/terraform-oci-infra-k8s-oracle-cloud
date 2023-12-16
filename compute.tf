@@ -5,8 +5,9 @@ locals {
 }
 
 resource "oci_core_instance" "k8s_node" {
-  count               = var.instance_count
-  availability_domain = data.oci_identity_availability_domains.ads.availability_domains[count.index % local.number_of_availability_domains].name
+  count = var.instance_count
+  # availability_domain = data.oci_identity_availability_domains.ads.availability_domains[count.index % local.number_of_availability_domains].name
+  availability_domain = data.oci_identity_availability_domains.ads.availability_domains[var.availability_domains[count.index]].name
   compartment_id      = var.compartment_id
   shape               = var.instance_shape
   source_details {
