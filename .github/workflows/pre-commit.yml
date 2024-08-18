@@ -59,9 +59,8 @@ jobs:
       - name: Install Terrascan
         run: |
           curl -L https://github.com/tenable/terrascan/releases/download/v1.19.1/terrascan_1.19.1_Linux_x86_64.tar.gz -o terrascan.tar.gz
-          tar -xzf terrascan.tar.gz
+          tar -xzf terrascan.tar.gz terrascan
           sudo mv terrascan /usr/local/bin/
-          rm -fr terrascan.tar.gz
 
       - name: Pre-commit Terraform ${{ steps.minMax.outputs.minVersion }}
         uses: clowdhaus/terraform-composite-actions/pre-commit@v1.9.0
@@ -89,13 +88,11 @@ jobs:
       - name: Install Terrascan
         run: |
           curl -L https://github.com/tenable/terrascan/releases/download/v1.19.1/terrascan_1.19.1_Linux_x86_64.tar.gz -o terrascan.tar.gz
-          tar -xzf terrascan.tar.gz
+          tar -xzf terrascan.tar.gz terrascan
           sudo mv terrascan /usr/local/bin/
-          rm -fr terrascan.tar.gz
 
       - name: Pre-commit Terraform ${{ steps.minMax.outputs.maxVersion }}
         uses: clowdhaus/terraform-composite-actions/pre-commit@v1.9.0
-        id: pre-commit
         with:
           terraform-version: ${{ steps.minMax.outputs.maxVersion }}
           tflint-version: ${{ env.TFLINT_VERSION }}
