@@ -61,6 +61,7 @@ jobs:
           curl -L https://github.com/tenable/terrascan/releases/download/v1.19.1/terrascan_1.19.1_Linux_x86_64.tar.gz -o terrascan.tar.gz
           tar -xzf terrascan.tar.gz
           sudo mv terrascan /usr/local/bin/
+          rm -fr terrascan.tar.gz
 
       - name: Pre-commit Terraform ${{ steps.minMax.outputs.minVersion }}
         uses: clowdhaus/terraform-composite-actions/pre-commit@v1.9.0
@@ -90,6 +91,7 @@ jobs:
           curl -L https://github.com/tenable/terrascan/releases/download/v1.19.1/terrascan_1.19.1_Linux_x86_64.tar.gz -o terrascan.tar.gz
           tar -xzf terrascan.tar.gz
           sudo mv terrascan /usr/local/bin/
+          rm -fr terrascan.tar.gz
 
       - name: Pre-commit Terraform ${{ steps.minMax.outputs.maxVersion }}
         uses: clowdhaus/terraform-composite-actions/pre-commit@v1.9.0
@@ -99,11 +101,3 @@ jobs:
           tflint-version: ${{ env.TFLINT_VERSION }}
           terraform-docs-version: ${{ env.TERRAFORM_DOCS_VERSION }}
           args: "--all-files --color always --show-diff-on-failure"
-
-      - name: Show changes only on pre-commit failure
-        continue-on-error: true
-        run: |
-          echo "git status"
-          git status
-          echo "git diff"
-          git diff
