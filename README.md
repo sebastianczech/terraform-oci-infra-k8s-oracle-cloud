@@ -100,3 +100,7 @@ No modules.
 | <a name="output_vcn_id"></a> [vcn\_id](#output\_vcn\_id) | ID of the core VCN |
 | <a name="output_vcn_state"></a> [vcn\_state](#output\_vcn\_state) | the state of the VCN |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+## License
+
+MIT Licensed. See [LICENSE](LICENSE).
