@@ -56,6 +56,12 @@ jobs:
         with:
           directory: ${{ matrix.directory }}
 
+      - name: Install Terrascan
+        run: |
+          curl -L https://github.com/accurics/terrascan/releases/download/v1.19.1/terrascan_1.19.1_linux_amd64.tar.gz -o terrascan.tar.gz
+          tar -xzf terrascan.tar.gz
+          sudo mv terrascan /usr/local/bin/
+
       - name: Pre-commit Terraform ${{ steps.minMax.outputs.minVersion }}
         uses: clowdhaus/terraform-composite-actions/pre-commit@v1.9.0
         with:
@@ -77,6 +83,12 @@ jobs:
       - name: Terraform min/max versions
         id: minMax
         uses: clowdhaus/terraform-min-max@v1.3.1
+
+      - name: Install Terrascan
+        run: |
+          curl -L https://github.com/accurics/terrascan/releases/download/v1.19.1/terrascan_1.19.1_linux_amd64.tar.gz -o terrascan.tar.gz
+          tar -xzf terrascan.tar.gz
+          sudo mv terrascan /usr/local/bin/
 
       - name: Pre-commit Terraform ${{ steps.minMax.outputs.maxVersion }}
         uses: clowdhaus/terraform-composite-actions/pre-commit@v1.9.0
