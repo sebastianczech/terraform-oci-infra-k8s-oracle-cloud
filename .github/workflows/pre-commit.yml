@@ -101,7 +101,7 @@ jobs:
           args: "--all-files --color always --show-diff-on-failure"
 
       - name: Show changes only on pre-commit failure
-        if: ${{ steps.pre-commit.outcome == 'failure' }}
+        continue-on-error: true
         run: |
           echo "git status"
           git status
