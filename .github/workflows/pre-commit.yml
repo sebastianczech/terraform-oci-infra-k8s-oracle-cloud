@@ -93,8 +93,17 @@ jobs:
 
       - name: Pre-commit Terraform ${{ steps.minMax.outputs.maxVersion }}
         uses: clowdhaus/terraform-composite-actions/pre-commit@v1.9.0
+        id: pre-commit
         with:
           terraform-version: ${{ steps.minMax.outputs.maxVersion }}
           tflint-version: ${{ env.TFLINT_VERSION }}
           terraform-docs-version: ${{ env.TERRAFORM_DOCS_VERSION }}
           args: "--all-files --color always --show-diff-on-failure"
+
+      - name: Show changes only on pre-commit failure
+        if: ${{ steps.pre-commit.outcome == 'failure' }}
+        run: |
+          echo "git status"
+          git status
+          echo "git diff"
+          git diff
