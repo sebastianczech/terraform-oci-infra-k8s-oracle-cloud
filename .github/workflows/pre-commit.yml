@@ -58,7 +58,7 @@ jobs:
 
       - name: Install Terrascan
         run: |
-          curl -L https://github.com/accurics/terrascan/releases/download/v1.19.1/terrascan_1.19.1_linux_amd64.tar.gz -o terrascan.tar.gz
+          curl -L https://github.com/tenable/terrascan/releases/download/v1.19.1/terrascan_1.19.1_Linux_x86_64.tar.gz -o terrascan.tar.gz
           tar -xzf terrascan.tar.gz
           sudo mv terrascan /usr/local/bin/
 
@@ -86,7 +86,7 @@ jobs:
 
       - name: Install Terrascan
         run: |
-          curl -L https://github.com/accurics/terrascan/releases/download/v1.19.1/terrascan_1.19.1_linux_amd64.tar.gz -o terrascan.tar.gz
+          curl -L https://github.com/tenable/terrascan/releases/download/v1.19.1/terrascan_1.19.1_Linux_x86_64.tar.gz -o terrascan.tar.gz
           tar -xzf terrascan.tar.gz
           sudo mv terrascan /usr/local/bin/
 
