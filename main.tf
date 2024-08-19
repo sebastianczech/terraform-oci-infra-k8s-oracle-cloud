@@ -4,8 +4,8 @@
 
 locals {
   # number_of_availability_domains = length(data.oci_identity_availability_domains.ads.availability_domains)
-  instance_image    = data.oci_core_images.oci_ubuntu_images.images[0].id
-  instance_firmware = data.oci_core_images.oci_ubuntu_images.images[0].launch_options[0].firmware
+  # instance_firmware = data.oci_core_images.oci_ubuntu_images.images[0].launch_options[0].firmware
+  instance_image = data.oci_core_images.oci_ubuntu_images.images[0].id
 }
 
 resource "oci_core_instance" "k8s_node" {

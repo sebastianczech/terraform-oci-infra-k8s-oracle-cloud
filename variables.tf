@@ -1,14 +1,14 @@
 variable "compartment_id" {
-  description = "compartment ID"
+  description = "Compartment ID"
   type        = string
 }
 
 variable "my_public_ip" {
-  description = "my public IP address"
+  description = "My public IP address"
   type        = string
   validation {
     condition     = can(cidrnetmask(var.my_public_ip))
-    error_message = "Public IP address must be a valid IPv4 CIDR"
+    error_message = "Public IP address must be a valid IPv4 CIDR."
   }
 }
 
@@ -18,13 +18,13 @@ variable "id_rsa_pub" {
 }
 
 variable "vcn_cidr_block" {
-  description = "vcn CIDR"
+  description = "VCN CIDR"
   type        = string
   default     = "172.16.0.0/20"
 }
 
 variable "subnet_cidr_block" {
-  description = "subnet CIDR"
+  description = "Subnet CIDR"
   type        = string
   default     = "172.16.0.0/24"
 }
@@ -37,14 +37,14 @@ variable "subnet_cidr_block" {
 # }
 
 variable "instance_shape" {
-  description = "shape of instance"
+  description = "Shape of instance"
   type        = string
   # default     = "VM.Standard.A1.Flex"
   default = "VM.Standard.E2.1.Micro"
 }
 
 variable "instance_count" {
-  description = "number of instances to create"
+  description = "Number of instances to create"
   type        = number
   default     = 4
 }
@@ -56,16 +56,13 @@ variable "availability_domains" {
 }
 
 variable "egress_security_rules" {
-  type    = list(map(string))
-  default = []
+  description = "Egress security rules"
+  type        = list(map(string))
+  default     = []
 }
 
 variable "ingress_security_rules" {
-  type    = list(map(string))
-  default = []
-}
-
-variable "create_ansible_inventory_vars" {
-  type    = bool
-  default = false
+  description = "Ingress security rules"
+  type        = list(map(string))
+  default     = []
 }

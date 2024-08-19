@@ -2,8 +2,12 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/hashicorp/oci" {
-  version = "6.7.0"
+  version     = "6.7.0"
+  constraints = "~> 6.7.0"
   hashes = [
+    "h1:M+BTvvmWqistNZ5OTDcqyEgTHdbk74DLVyAjUl+weLg=",
+    "h1:lqWSLm8QTA6H0Rf1rdgKNYIOIGJrJ2Oiu9mS34+YYxA=",
+    "h1:omyQDBKh3zG3jxJuEgWZMZTTQ1Z4vYDz4M8+PBoqlLg=",
     "h1:xKtNGv6ZWbXCql+4ENO8MwR/Wu0eRztb7YTwWxC0KgE=",
     "zh:30782d018aa1cebf6ca3fb589c1a28be834f4c140cdd26eae2e616baae47d3fe",
     "zh:5035fb10a4fa3f4c1b5723f70ca167ce45bb3a6463e1fc9387c99a2bb3a532e5",
