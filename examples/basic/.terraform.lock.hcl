@@ -6,6 +6,9 @@ provider "registry.terraform.io/hashicorp/http" {
   constraints = "~> 3.4.4"
   hashes = [
     "h1:EqpXf0aaUCTyYzlNP9XhjzAMMImD1T5bAy1pgLjWx4s=",
+    "h1:V/7jgzUuz4YoOuyEOnlO1WJOJ1Y4DV0jSir2YpAI4Rc=",
+    "h1:WSgOdMqgN48NIZy0CTKY2hMTNdc4rChYPUDEWYXeaTQ=",
+    "h1:dDGRXAVxwKgjVzA7VsO7MpYxt+eHnJosFV7rPZ4842o=",
     "zh:28910c348aff60df15cb70c2838c5dac463de5d52fe41a511f122b0b5fa6032d",
     "zh:61ddcdb703900b01a8d38c67bd68304e87e05aa82c2d6636a5c49813b0cee8bf",
     "zh:6d7ba9fcebff1079b9cbad066874d83680a4aedc997baa597927f59b29a69186",
