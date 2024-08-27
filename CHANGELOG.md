@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/compare/v1.0.2...v1.1.0) (2024-08-27)
+
+### Features
+
+* New example with basic usage of the module ([#5](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/issues/5)) ([9e03ffd](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/commit/9e03ffdbc259c265dfdf1f619db27fa88551e685))
+
+### Documentation
+
+* Update README ([42dd261](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/commit/42dd2613191c758c6c0ee21285d82ef3c0c51240))
+
 ## [1.0.2](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/compare/v1.0.1...v1.0.2) (2024-08-26)
 
 ### Continuous Integration
