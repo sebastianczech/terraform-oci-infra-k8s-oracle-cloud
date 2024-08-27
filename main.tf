@@ -110,6 +110,12 @@ data "oci_core_images" "oci_ubuntu_images" {
     values = ["22.04 Minimal"]
   }
 
+  ### for shape VM.Standard.A1.Flex filter:
+  # filter {
+  #   name   = "operating_system_version"
+  #   values = ["20.04"]
+  # }
+
   # filter {
   #   name   = "display_name"
   #   values = [".*aarch64.*"]
@@ -130,21 +136,21 @@ resource "oci_core_vcn" "k8s_vcn" {
   dns_label      = "k8svcn"
   cidr_block     = var.vcn_cidr_block
   compartment_id = var.compartment_id
-  display_name   = "K8s VCN"
+  display_name   = "k8s_VCN"
 }
 
 resource "oci_core_internet_gateway" "k8s_internet_gateway" {
   compartment_id = var.compartment_id
   vcn_id         = oci_core_vcn.k8s_vcn.id
   enabled        = true
-  display_name   = "K8s Inet Gateway"
+  display_name   = "k8s_inet_gateway"
 }
 
 # https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformbestpractices_topic-vcndefaults.htm
 resource "oci_core_default_route_table" "k8s_vcn_route_table" {
   manage_default_resource_id = oci_core_vcn.k8s_vcn.default_route_table_id
   compartment_id             = var.compartment_id
-  display_name               = "K8s default route table"
+  display_name               = "k8s_default_route_table"
   route_rules {
     network_entity_id = oci_core_internet_gateway.k8s_internet_gateway.id
     destination       = "0.0.0.0/0"
@@ -156,7 +162,7 @@ resource "oci_core_subnet" "k8s_subnet" {
   cidr_block     = var.subnet_cidr_block
   compartment_id = var.compartment_id
   vcn_id         = oci_core_vcn.k8s_vcn.id
-  display_name   = "K8s subnet"
+  display_name   = "k8s_subnet"
   dns_label      = "k8ssubnet"
 }
 
@@ -183,14 +189,14 @@ resource "oci_network_load_balancer_backend_set" "k8s_backend_set" {
     timeout_in_millis  = 3000
     url_path           = "/"
   }
-  name                     = "K8s bucket set"
+  name                     = "k8s_API_backend_set"
   network_load_balancer_id = oci_network_load_balancer_network_load_balancer.k8s_network_load_balancer.id
   policy                   = "FIVE_TUPLE"
 }
 
 resource "oci_network_load_balancer_listener" "k8s_listener" {
   default_backend_set_name = oci_network_load_balancer_backend_set.k8s_backend_set.name
-  name                     = "K8s API listener"
+  name                     = "k8s_API_listener"
   network_load_balancer_id = oci_network_load_balancer_network_load_balancer.k8s_network_load_balancer.id
   port                     = 16443
   protocol                 = "TCP"
@@ -215,14 +221,14 @@ resource "oci_network_load_balancer_backend_set" "nginx_http_backend_set" {
     timeout_in_millis  = 3000
     url_path           = "/"
   }
-  name                     = "NGINX HTTP bucket set"
+  name                     = "nginx_HTTP_backend_set"
   network_load_balancer_id = oci_network_load_balancer_network_load_balancer.k8s_network_load_balancer.id
   policy                   = "FIVE_TUPLE"
 }
 
 resource "oci_network_load_balancer_listener" "nginx_http_listener" {
   default_backend_set_name = oci_network_load_balancer_backend_set.nginx_http_backend_set.name
-  name                     = "NGINX HTTP listener"
+  name                     = "nginx_HTTP_listener"
   network_load_balancer_id = oci_network_load_balancer_network_load_balancer.k8s_network_load_balancer.id
   port                     = 80
   protocol                 = "TCP"
@@ -230,7 +236,7 @@ resource "oci_network_load_balancer_listener" "nginx_http_listener" {
 
 resource "oci_network_load_balancer_network_load_balancer" "k8s_network_load_balancer" {
   compartment_id = var.compartment_id
-  display_name   = "K8s network load balancer"
+  display_name   = "k8s_network_load_balancer"
   subnet_id      = oci_core_subnet.k8s_subnet.id
   is_private     = false
 }
@@ -242,7 +248,7 @@ resource "oci_network_load_balancer_network_load_balancer" "k8s_network_load_bal
 resource "oci_core_default_security_list" "k8s_vcn_security_list" {
   manage_default_resource_id = oci_core_vcn.k8s_vcn.default_security_list_id
   compartment_id             = var.compartment_id
-  display_name               = "K8s security list"
+  display_name               = "k8s_security_list"
   dynamic "egress_security_rules" {
     for_each = var.egress_security_rules
     iterator = security_rule
