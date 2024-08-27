@@ -58,5 +58,5 @@ repos:
     hooks:
       - id: terraform-pre-commit
         args: [ '-i terraform --non-recursive' ]
-        files: ^.*\.tf$
-        exclude: ^\.github/.*  # Exclude the .github directory
+        # files: ^.*\.tf$
+        # exclude: ^\.github/.*  # Exclude the .github directory
