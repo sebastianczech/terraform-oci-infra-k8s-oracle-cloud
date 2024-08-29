@@ -8,7 +8,7 @@ variable "compartment_id" {
   type        = string
 }
 
-variable "id_rsa" {
+variable "id_rsa_pub" {
   description = "Path to SSH public key"
   type        = string
   default     = "~/.ssh/id_rsa.pub"
