@@ -6,7 +6,7 @@ module "infra_k8s_oracle_cloud" {
   source = "../../"
 
   compartment_id         = var.compartment_id
-  id_rsa_pub             = try(file(var.id_rsa), null)
+  id_rsa_pub             = try(file(var.id_rsa_pub), null)
   instance_count         = var.instance_count
   availability_domains   = var.availability_domains
   egress_security_rules  = var.egress_security_rules
