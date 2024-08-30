@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.1](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/compare/v1.1.0...v1.1.1) (2024-08-30)
+
+### Code Refactoring
+
+* Change variable for SSH key ([#6](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/issues/6)) ([5caffe2](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/commit/5caffe24c603924f0033d6fbb0a9909ce73ef7a4))
+
 ## [1.1.0](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/compare/v1.0.2...v1.1.0) (2024-08-27)
 
 ### Features
