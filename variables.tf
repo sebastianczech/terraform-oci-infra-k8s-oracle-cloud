@@ -39,8 +39,8 @@ variable "subnet_cidr_block" {
 variable "instance_shape" {
   description = "Shape of instance"
   type        = string
+  default     = "VM.Standard.E2.1.Micro"
   # default     = "VM.Standard.A1.Flex"
-  default = "VM.Standard.E2.1.Micro"
 }
 
 variable "instance_count" {

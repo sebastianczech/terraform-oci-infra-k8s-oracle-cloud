@@ -105,6 +105,7 @@ data "oci_core_images" "oci_ubuntu_images" {
     values = ["Canonical Ubuntu"]
   }
 
+  ### for shape VM.Standard.E2.1.Micro filter:
   filter {
     name   = "operating_system_version"
     values = ["22.04 Minimal"]
@@ -113,7 +114,7 @@ data "oci_core_images" "oci_ubuntu_images" {
   ### for shape VM.Standard.A1.Flex filter:
   # filter {
   #   name   = "operating_system_version"
-  #   values = ["20.04"]
+  #   values = ["22.04"]
   # }
 
   # filter {
@@ -121,7 +122,6 @@ data "oci_core_images" "oci_ubuntu_images" {
   #   values = [".*aarch64.*"]
   #   regex  = true
   # }
-
 }
 
 ################################################################################
