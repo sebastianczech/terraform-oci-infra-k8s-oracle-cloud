@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.3](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/compare/v1.1.2...v1.1.3) (2024-09-10)
+
+### Bug Fixes
+
+* Update filter for shape VM.Standard.A1.Flex ([d82e6f6](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/commit/d82e6f6d2831a1a3ca453e31caa9084472faf317))
+
 ## [1.1.2](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/compare/v1.1.1...v1.1.2) (2024-09-04)
 
 ### Miscellaneous Chores
