@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.4](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/compare/v1.1.3...v1.1.4) (2024-09-15)
+
+### Miscellaneous Chores
+
+* Use VM.Standard.A1.Flex, VM.Standard.A1.Flex is not enought for k8s ([96f641f](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/commit/96f641f1383a7c2c20a67730384b164c94994e40))
+
 ## [1.1.3](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/compare/v1.1.2...v1.1.3) (2024-09-10)
 
 ### Bug Fixes
