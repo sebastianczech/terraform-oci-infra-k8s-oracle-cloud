@@ -90,7 +90,7 @@ No modules.
 | <a name="input_id_rsa_pub"></a> [id\_rsa\_pub](#input\_id\_rsa\_pub) | SSH public key | `string` | n/a | yes |
 | <a name="input_ingress_security_rules"></a> [ingress\_security\_rules](#input\_ingress\_security\_rules) | Ingress security rules | `list(map(string))` | `[]` | no |
 | <a name="input_instance_count"></a> [instance\_count](#input\_instance\_count) | Number of instances to create | `number` | `4` | no |
-| <a name="input_instance_shape"></a> [instance\_shape](#input\_instance\_shape) | Shape of instance | `string` | `"VM.Standard.E2.1.Micro"` | no |
+| <a name="input_instance_shape"></a> [instance\_shape](#input\_instance\_shape) | Shape of instance | `string` | `"VM.Standard.A1.Flex"` | no |
 | <a name="input_my_public_ip"></a> [my\_public\_ip](#input\_my\_public\_ip) | My public IP address | `string` | n/a | yes |
 | <a name="input_subnet_cidr_block"></a> [subnet\_cidr\_block](#input\_subnet\_cidr\_block) | Subnet CIDR | `string` | `"172.16.0.0/24"` | no |
 | <a name="input_vcn_cidr_block"></a> [vcn\_cidr\_block](#input\_vcn\_cidr\_block) | VCN CIDR | `string` | `"172.16.0.0/20"` | no |

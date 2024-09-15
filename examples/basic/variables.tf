@@ -23,7 +23,7 @@ variable "instance_count" {
 variable "availability_domains" {
   description = "Availability domains in which instances are going to be created"
   type        = list(number)
-  default     = [1, 1]
+  default     = [0, 1]
 }
 
 variable "egress_security_rules" {

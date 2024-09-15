@@ -31,7 +31,7 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_availability_domains"></a> [availability\_domains](#input\_availability\_domains) | Availability domains in which instances are going to be created | `list(number)` | <pre>[<br>  1,<br>  1<br>]</pre> | no |
+| <a name="input_availability_domains"></a> [availability\_domains](#input\_availability\_domains) | Availability domains in which instances are going to be created | `list(number)` | <pre>[<br>  0,<br>  1<br>]</pre> | no |
 | <a name="input_compartment_id"></a> [compartment\_id](#input\_compartment\_id) | Compartment ID | `string` | n/a | yes |
 | <a name="input_egress_security_rules"></a> [egress\_security\_rules](#input\_egress\_security\_rules) | Egress security rules | `list(map(string))` | <pre>[<br>  {<br>    "description": "Allow all outgoing traffic",<br>    "destination": "0.0.0.0/0",<br>    "destination_type": "CIDR_BLOCK",<br>    "protocol": "all"<br>  }<br>]</pre> | no |
 | <a name="input_id_rsa_pub"></a> [id\_rsa\_pub](#input\_id\_rsa\_pub) | Path to SSH public key | `string` | `"~/.ssh/id_rsa.pub"` | no |
