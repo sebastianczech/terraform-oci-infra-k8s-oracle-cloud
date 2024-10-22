@@ -7,6 +7,10 @@ repos:
       - id: trailing-whitespace
       - id: check-yaml
       - id: check-added-large-files
+-   repo: https://github.com/gitleaks/gitleaks
+    rev: v8.21.0
+    hooks:
+      - id: gitleaks
 -   repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.92.1
     hooks:
