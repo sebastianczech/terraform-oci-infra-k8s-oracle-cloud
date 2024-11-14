@@ -25,8 +25,8 @@ provider "registry.terraform.io/hashicorp/http" {
 }
 
 provider "registry.terraform.io/hashicorp/oci" {
-  version     = "6.16.0"
-  constraints = "~> 6.16.0"
+  version     = "6.17.0"
+  constraints = "~> 6.17.0"
   hashes = [
     "h1:D+XXE2Xenxk6QUAa8Xrc5SHUmnY9Zgn0cVejmarmxRA=",
     "h1:atmQMI2lVb4TqxeF2BYrOmK+ChZTP4WFwvcVCk/b6gQ=",
