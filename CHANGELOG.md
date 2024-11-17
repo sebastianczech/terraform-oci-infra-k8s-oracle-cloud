@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.8](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/compare/v1.1.7...v1.1.8) (2024-11-17)
+
+### Miscellaneous Chores
+
+* **deps:** bump hashicorp/oci from 6.16.0 to 6.17.0 ([#17](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/issues/17)) ([03497df](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/commit/03497df90f6e964763df119da3283254e6820327))
+
+### Continuous Integration
+
+* Add Super Linter ([#18](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/issues/18)) ([627fe23](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/commit/627fe2386102f66dcb1fefde4a55f36920549264))
+
 ## [1.1.7](https://github.com/sebastianczech/terraform-oci-infra-k8s-oracle-cloud/compare/v1.1.6...v1.1.7) (2024-11-05)
 
 ### Bug Fixes
