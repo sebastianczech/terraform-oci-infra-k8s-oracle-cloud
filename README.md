@@ -48,13 +48,13 @@ terraform apply
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
-| <a name="requirement_oci"></a> [oci](#requirement\_oci) | ~> 6.17.0 |
+| <a name="requirement_oci"></a> [oci](#requirement\_oci) | ~> 6.19.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_oci"></a> [oci](#provider\_oci) | ~> 6.17.0 |
+| <a name="provider_oci"></a> [oci](#provider\_oci) | ~> 6.19.0 |
 
 ## Modules
 
