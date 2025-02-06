@@ -70,22 +70,24 @@ jobs:
           git status
           git diff
           git add .
+          git status
           git commit -m "chore: Upgrade dependencies"
           git push origin upgrade-dependencies
+          git status
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create Pull Request
-        if: ${{ failure() && steps.precommit.conclusion == 'failure' }}
-        uses: peter-evans/create-pull-request@v7
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: Upgrade dependencies"
-          title: "chore: Upgrade dependencies"
-          body: "This PR upgrades dependencies."
-          branch: upgrade-dependencies
-          base: main
-          labels: dependencies
-          assignees: sebastianczech
-          reviewers: sebastianczech
-          draft: false
+      # - name: Create Pull Request
+      #   if: ${{ failure() && steps.precommit.conclusion == 'failure' }}
+      #   uses: peter-evans/create-pull-request@v7
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     commit-message: "chore: Upgrade dependencies"
+      #     title: "chore: Upgrade dependencies"
+      #     body: "This PR upgrades dependencies."
+      #     branch: upgrade-dependencies
+      #     base: main
+      #     labels: dependencies
+      #     assignees: sebastianczech
+      #     reviewers: sebastianczech
+      #     draft: false
