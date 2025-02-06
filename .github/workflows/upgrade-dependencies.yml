@@ -78,7 +78,6 @@ jobs:
       - name: Create pull request
         if: ${{ failure() && steps.precommit.conclusion == 'failure' }}
         run: |
-          gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
           gh pr create --fill --base main --head upgrade-dependencies --title "chore: Upgrade dependencies" --body "This PR upgrades dependencies."
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
