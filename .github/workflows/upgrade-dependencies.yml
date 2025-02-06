@@ -41,15 +41,15 @@ jobs:
 
       - name: Install tflint
         run: |
-          curl -sSLo tflint.zip https://github.com/terraform-linters/tflint/releases/download/v0.55.1/tflint_linux_amd64.zip
-          unzip tflint.zip
-          sudo mv tflint /usr/local/bin/
+          curl -sSLo /tmp/tflint.zip https://github.com/terraform-linters/tflint/releases/download/v0.55.1/tflint_linux_amd64.zip
+          unzip /tmp/tflint.zip -d /tmp
+          sudo mv /tmp/tflint /usr/local/bin/
 
       - name: Install terrascan
         run: |
-          curl -L https://github.com/tenable/terrascan/releases/download/v1.19.9/terrascan_1.19.9_Linux_x86_64.tar.gz -o terrascan.tar.gz
-          tar -xzf terrascan.tar.gz terrascan
-          sudo mv terrascan /usr/local/bin/
+          curl -L https://github.com/tenable/terrascan/releases/download/v1.19.9/terrascan_1.19.9_Linux_x86_64.tar.gz -o /tmp/terrascan.tar.gz
+          tar -xzf /tmp/terrascan.tar.gz -C /tmp terrascan
+          sudo mv /tmp/terrascan /usr/local/bin/
           terrascan init
 
       - name: Setup terraform
