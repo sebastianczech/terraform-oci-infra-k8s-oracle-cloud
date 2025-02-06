@@ -48,13 +48,13 @@ terraform apply
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
-| <a name="requirement_oci"></a> [oci](#requirement\_oci) | ~> 6.19.0 |
+| <a name="requirement_oci"></a> [oci](#requirement\_oci) | ~> 6.25.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_oci"></a> [oci](#provider\_oci) | ~> 6.19.0 |
+| <a name="provider_oci"></a> [oci](#provider\_oci) | ~> 6.25.0 |
 
 ## Modules
 
@@ -84,7 +84,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_availability_domains"></a> [availability\_domains](#input\_availability\_domains) | Availability domains in which instances are going to be created | `list(number)` | <pre>[<br>  0,<br>  1,<br>  2,<br>  0<br>]</pre> | no |
+| <a name="input_availability_domains"></a> [availability\_domains](#input\_availability\_domains) | Availability domains in which instances are going to be created | `list(number)` | <pre>[<br/>  0,<br/>  1,<br/>  2,<br/>  0<br/>]</pre> | no |
 | <a name="input_compartment_id"></a> [compartment\_id](#input\_compartment\_id) | Compartment ID | `string` | n/a | yes |
 | <a name="input_egress_security_rules"></a> [egress\_security\_rules](#input\_egress\_security\_rules) | Egress security rules | `list(map(string))` | `[]` | no |
 | <a name="input_id_rsa_pub"></a> [id\_rsa\_pub](#input\_id\_rsa\_pub) | SSH public key | `string` | n/a | yes |
