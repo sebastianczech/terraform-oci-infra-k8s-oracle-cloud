@@ -75,4 +75,4 @@ jobs:
           labels: dependencies
           assignees: sebastianczech
           reviewers: sebastianczech
-          draft: false
+          draft: always-true
